@@ -11,7 +11,6 @@ const Intern = require('./lib/Intern');
 // empty array will push data to
 const teamArray = []; 
 
-
 const inputManager = () => {
     return inquirer.prompt ([
         {
@@ -78,7 +77,7 @@ const inputManager = () => {
     })
 };
 
-const addEmployee = () => {
+const inputEmployee = () => {
     console.log(`
     =================
     Adding employees to the team
@@ -89,13 +88,13 @@ const addEmployee = () => {
         {
             type: 'list',
             name: 'role',
-            message: "Please choose your employee's role",
+            message: "Please choose the role of your employee",
             choices: ['Engineer', 'Intern']
         },
         {
             type: 'input',
             name: 'name',
-            message: "What's the name of the employee?", 
+            message: "What's your employees name?", 
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -160,7 +159,7 @@ const addEmployee = () => {
         },
         {
             type: 'confirm',
-            name: 'confirmAddEmployee',
+            name: 'confirminputEmployee',
             message: 'Would you like to add more team members?',
             default: false
         }
@@ -168,9 +167,9 @@ const addEmployee = () => {
     .then(employeeData => {
         // data for each employee 
 
-        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
+        let { name, id, email, role, github, school, confirminputEmployee } = employeeData; 
         let employee; 
-
+        // if else for which employee they choose and push that to teamArray
         if (role === "Engineer") {
             employee = new Engineer (name, id, email, github);
 
@@ -184,8 +183,8 @@ const addEmployee = () => {
 
         teamArray.push(employee); 
 
-        if (confirmAddEmployee) {
-            return addEmployee(teamArray); 
+        if (confirminputEmployee) {
+            return inputEmployee(teamArray); 
         } else {
             return teamArray;
         }
@@ -197,7 +196,7 @@ const addEmployee = () => {
 
 
 
-
+// writing file using fs 
 const writeFile = data => {
     fs.writeFile('./dist/index.html', data, err => {
         if (err) {
@@ -211,7 +210,7 @@ const writeFile = data => {
 }; 
 
 inputManager()
-  .then(addEmployee)
+  .then(inputEmployee)
   .then(teamArray => {
     return generateHTML(teamArray);
   })

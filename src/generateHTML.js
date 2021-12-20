@@ -5,7 +5,7 @@ const createManager = function (manager) {
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+                <h4>Manager</h4><i class="fas fa-baby"></i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
@@ -24,7 +24,7 @@ const createIntern = function (intern) {
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
+                <h4>Intern</h4><i class="fas fa-graduation-cap"></i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
@@ -43,7 +43,7 @@ const createEngineer = function (engineer) {
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
+                <h4>Engineer</h4><i class="fab fa-battle-net"></i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
@@ -110,7 +110,7 @@ const generateTeamPage = function (teamCards) {
         <title>Team Profile</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
